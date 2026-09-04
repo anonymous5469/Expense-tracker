@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>FinTrack</title>
+  <defs>
+    <linearGradient id="mark" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#09090b"/>
+  <path d="M17 20.5A4.5 4.5 0 0 1 21.5 16h21A4.5 4.5 0 0 1 47 20.5v23a4.5 4.5 0 0 1-4.5 4.5h-21a4.5 4.5 0 0 1-4.5-4.5v-23Z" fill="url(#mark)"/>
+  <path d="M23 25h18M23 32h18M23 39h10" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+</svg>
