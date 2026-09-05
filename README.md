@@ -30,31 +30,37 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/anonymous5469/Expense-tracker.git
-cd Expense-tracker
-npm install
-npm run dev
-Open http://localhost:5173 (http://localhost:5173) in your browser.
-Scripts
-Command
-npm run dev
-npm run build
-npm run preview
-npm run lint
-npm run typecheck
-Gemini Setup (Optional)
-1. Get a free API key from Google AI Studio (https://aistudio.google.com/app/apikey)
-2. Open Admin Centre in the app
-3. Paste your key and select Save
-The key stays in your browser's local storage and is sent directly to Google's API. There is no backend or server secret to configure.
-Tech Stack
-- React 18 + TypeScript — UI and type safety
-- Tailwind CSS — Utility-first styling
-- Zustand — Lightweight state management
-- Recharts — Interactive charts
-- Vite — Fast build tooling
-- Gemini AI — Optional financial insights
-Project Structure
+git clone https://github.com/anonymous5469/Expense-tracker.git && cd Expense-tracker && npm install && npm run dev
+```
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Run TypeScript checks |
+
+## Gemini Setup (Optional)
+
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Open **Admin Centre** in the app
+3. Paste your key and select **Save**
+
+## Tech Stack
+
+- **React 18** + **TypeScript** — UI and type safety
+- **Tailwind CSS** — Utility-first styling
+- **Zustand** — Lightweight state management
+- **Recharts** — Interactive charts
+- **Vite** — Fast build tooling
+- **Gemini AI** — Optional financial insights
+
+## Project Structure
+
+```
 src/
 ├── App.tsx                  # Application shell, theme, totals, dialogs
 ├── main.tsx                 # Entry point
@@ -75,5 +81,8 @@ src/
 ├── store/
 │   └── useExpenseStore.ts   # Persisted state management
 └── types.ts                 # TypeScript interfaces
-License
+```
+
+## License
+
 MIT
