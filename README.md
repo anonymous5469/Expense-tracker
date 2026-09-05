@@ -57,9 +57,18 @@ Import the repository into Netlify with the build command and output directory a
 
 ### GitHub
 
-Pushes to `main` are deployed by `.github/workflows/deploy-pages.yml`. In the repository's **Settings > Pages**, set the source to **GitHub Actions** once, then open:
+Pushes to `main` are deployed by `.github/workflows/deploy-pages.yml`. In the repository's **Settings > Pages**, set the source to **GitHub Actions** once. The workflow automatically uses the project path or configured custom domain base path.
+
+For `expense-tracker.dev`, configure DNS at your domain provider with these records:
+
+- Apex (`@`) A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `www` CNAME: `anonymous5469.github.io`
+
+Remove conflicting A, AAAA, CNAME, URL-forwarding, or proxy records. After DNS propagates, use **Check again** in Pages settings, enable **Enforce HTTPS**, then open:
 
 `https://anonymous5469.github.io/Expense-tracker/`
+
+or `https://expense-tracker.dev/`.
 
 Keep `package-lock.json` committed and do not commit `node_modules/`, `dist/`, `.env`, or `.env.*`. The included `.nvmrc` and `engines` field document the supported Node baseline.
 

@@ -2,10 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
+const pagesBase = process.env.VITE_BASE
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  // GitHub Pages serves this project from /Expense-tracker/; keep local dev at /.
-  base: process.env.GITHUB_ACTIONS ? "/Expense-tracker/" : "/",
+  // GitHub Pages supplies a project path unless a custom domain is active.
+  base: pagesBase ? `${pagesBase.replace(/\/$/, "")}/` : "/",
   plugins: [react()],
   resolve: {
     alias: {
