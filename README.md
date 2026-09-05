@@ -57,6 +57,10 @@ Import the repository into Netlify with the build command and output directory a
 
 ### GitHub
 
+Pushes to `main` are deployed by `.github/workflows/deploy-pages.yml`. In the repository's **Settings > Pages**, set the source to **GitHub Actions** once, then open:
+
+`https://anonymous5469.github.io/Expense-tracker/`
+
 Keep `package-lock.json` committed and do not commit `node_modules/`, `dist/`, `.env`, or `.env.*`. The included `.nvmrc` and `engines` field document the supported Node baseline.
 
 ## Project Structure
