@@ -1,81 +1,89 @@
+<div align="center">
+
 # FinTrack
 
-FinTrack is a responsive, offline-first expense tracker with automatic balance calculations and optional Gemini financial guidance.
+**Premium AI-powered expense tracker with real-time balance calculations.**
 
-## Features
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://expense-tracker-eight-iota-67.vercel.app)
+[![Built with React](https://img.shields.io/badge/Built_with-React_18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
+[![Gemini AI](https://img.shields.io/badge/Gemini_AI-Optional-4285F4?style=for-the-badge&logo=google)](https://aistudio.google.com)
 
-- Monthly budget, total spent, and remaining balance update immediately.
-- Add, edit, delete, undo, search, filter, and export transactions as CSV.
-- Category breakdown and 14-day spending trend charts.
-- Light and dark themes with persisted preferences.
-- Optional Gemini summaries, model selection, and budget chat.
-- Responsive layout for desktop, tablet, and mobile.
+[Live Demo](https://expense-tracker-eight-iota-67.vercel.app) · [Report Bug](https://github.com/anonymous5469/Expense-tracker/issues) · [Request Feature](https://github.com/anonymous5469/Expense-tracker/issues)
 
-## Local Development
+</div>
 
-Requirements: Node.js 18 or newer and npm.
+---
+
+## Highlights
+
+| Feature | Description |
+|---------|-------------|
+| Budget Tracking | Monthly budget, spent, and remaining balance update instantly |
+| Transaction Management | Add, edit, delete, undo, search, filter, and export as CSV |
+| Visual Insights | Category breakdown and 14-day spending trend charts |
+| Themes | Light and dark mode with persisted preferences |
+| AI Assistant | Optional Gemini-powered summaries, insights, and chat |
+| Responsive | Desktop, tablet, and mobile layouts |
+
+## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/anonymous5469/Expense-tracker.git
+cd Expense-tracker
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
-```
-
-Useful checks:
-
-```bash
-npm run typecheck
-npm run lint
+Open http://localhost:5173 (http://localhost:5173) in your browser.
+Scripts
+Command
+npm run dev
 npm run build
 npm run preview
-```
-
-The production build is written to `dist/` and is intentionally ignored by Git.
-
-## Gemini Setup
-
-Gemini is optional. Open **Admin Centre** in the app, paste a key from [Google AI Studio](https://aistudio.google.com/app/apikey), and select **Save**.
-
-The key and expense data are stored in the browser's local storage. The key is sent directly from the browser to Google's API when AI features are used. There is no FinTrack backend and no Gemini server secret to configure. Never commit an API key or place one in a tracked file.
-
-Because storage is browser-local, data does not automatically sync between browsers or devices. A deployed URL makes the app available everywhere, but each browser has its own data unless cloud sync is added later.
-
-## Deployment
-
-FinTrack is a static Vite app. The default deployment settings are:
-
-- Build command: `npm run build`
-- Output directory: `dist`
-- Install command: `npm install`
-
-### Vercel
-
-Import the GitHub repository into Vercel. Vercel detects Vite automatically and deploys every push to the configured branch.
-
-### Netlify
-
-Import the repository into Netlify with the build command and output directory above. The included Vite entry point is suitable for this single-page app.
-
-### GitHub
-
-Pushes to `main` are deployed by `.github/workflows/deploy-pages.yml`. In the repository's **Settings > Pages**, set the source to **GitHub Actions** once. The workflow automatically uses the project path or configured custom domain base path.
-
-For `expense-tracker.dev`, configure DNS at your domain provider with these records:
-
-- Apex (`@`) A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- `www` CNAME: `anonymous5469.github.io`
-
-Remove conflicting A, AAAA, CNAME, URL-forwarding, or proxy records. After DNS propagates, use **Check again** in Pages settings, enable **Enforce HTTPS**, then open:
-
-`https://anonymous5469.github.io/Expense-tracker/`
-
-or `https://expense-tracker.dev/`.
-
-Keep `package-lock.json` committed and do not commit `node_modules/`, `dist/`, `.env`, or `.env.*`. The included `.nvmrc` and `engines` field document the supported Node baseline.
-
-## Project Structure
-
-- `src/App.tsx` - application shell, theme, totals, and dialogs.
-- `src/components/` - dashboard, forms, charts, tables, and Admin Centre.
-- `src/store/useExpenseStore.ts` - persisted client-side state.
-- `src/lib/gemini.ts` - Gemini model discovery, requests, and response sanitization.
-- `vite.config.ts` - Vite alias and production chunk configuration.
+npm run lint
+npm run typecheck
+Gemini Setup (Optional)
+1. Get a free API key from Google AI Studio (https://aistudio.google.com/app/apikey)
+2. Open Admin Centre in the app
+3. Paste your key and select Save
+The key stays in your browser's local storage and is sent directly to Google's API. There is no backend or server secret to configure.
+Tech Stack
+- React 18 + TypeScript — UI and type safety
+- Tailwind CSS — Utility-first styling
+- Zustand — Lightweight state management
+- Recharts — Interactive charts
+- Vite — Fast build tooling
+- Gemini AI — Optional financial insights
+Project Structure
+src/
+├── App.tsx                  # Application shell, theme, totals, dialogs
+├── main.tsx                 # Entry point
+├── index.css                # Global styles
+├── components/
+│   ├── AdminCenter.tsx      # Settings and API key management
+│   ├── AIAdvisor.tsx        # Gemini summaries and chat
+│   ├── BalanceSetup.tsx     # Monthly budget configuration
+│   ├── CategoryChart.tsx    # Expense breakdown chart
+│   ├── ExpenseForm.tsx      # Add/edit transactions
+│   ├── ExpenseTable.tsx     # Transaction list with filters
+│   ├── Header.tsx           # App header
+│   ├── StatsCards.tsx       # Budget overview cards
+│   └── ui/                  # Reusable UI components
+├── lib/
+│   ├── gemini.ts            # Gemini API client and sanitization
+│   └── utils.ts             # Utility functions
+├── store/
+│   └── useExpenseStore.ts   # Persisted state management
+└── types.ts                 # TypeScript interfaces
+Privacy
+- All data is stored in your browser's local storage
+- No analytics, tracking, or backend servers
+- Gemini API key stays in your browser — never committed or shared
+- Data does not sync across devices or browsers
+License
+MIT
