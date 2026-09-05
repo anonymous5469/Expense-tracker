@@ -30,14 +30,9 @@
 ## Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/anonymous5469/Expense-tracker.git
 cd Expense-tracker
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 Open http://localhost:5173 (http://localhost:5173) in your browser.
 Scripts
@@ -60,30 +55,20 @@ Tech Stack
 - Vite — Fast build tooling
 - Gemini AI — Optional financial insights
 Project Structure
-src/
-├── App.tsx                  # Application shell, theme, totals, dialogs
-├── main.tsx                 # Entry point
-├── index.css                # Global styles
-├── components/
-│   ├── AdminCenter.tsx      # Settings and API key management
-│   ├── AIAdvisor.tsx        # Gemini summaries and chat
-│   ├── BalanceSetup.tsx     # Monthly budget configuration
-│   ├── CategoryChart.tsx    # Expense breakdown chart
-│   ├── ExpenseForm.tsx      # Add/edit transactions
-│   ├── ExpenseTable.tsx     # Transaction list with filters
-│   ├── Header.tsx           # App header
-│   ├── StatsCards.tsx       # Budget overview cards
-│   └── ui/                  # Reusable UI components
-├── lib/
-│   ├── gemini.ts            # Gemini API client and sanitization
-│   └── utils.ts             # Utility functions
-├── store/
-│   └── useExpenseStore.ts   # Persisted state management
-└── types.ts                 # TypeScript interfaces
-Privacy
-- All data is stored in your browser's local storage
-- No analytics, tracking, or backend servers
-- Gemini API key stays in your browser — never committed or shared
-- Data does not sync across devices or browsers
+- src/App.tsx — Application shell, theme, totals, dialogs
+- src/main.tsx — Entry point
+- src/index.css — Global styles
+- src/components/AdminCenter.tsx — Settings and API key management
+- src/components/AIAdvisor.tsx — Gemini summaries and chat
+- src/components/BalanceSetup.tsx — Monthly budget configuration
+- src/components/CategoryChart.tsx — Expense breakdown chart
+- src/components/ExpenseForm.tsx — Add/edit transactions
+- src/components/ExpenseTable.tsx — Transaction list with filters
+- src/components/Header.tsx — App header
+- src/components/StatsCards.tsx — Budget overview cards
+- src/lib/gemini.ts — Gemini API client and sanitization
+- src/lib/utils.ts — Utility functions
+- src/store/useExpenseStore.ts — Persisted state management
+- src/types.ts — TypeScript interfaces
 License
 MIT
